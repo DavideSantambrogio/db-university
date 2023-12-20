@@ -1,12 +1,10 @@
 -- 1. Selezionare tutti gli studenti nati nel 1990
 SELECT
-    `name`,
-    `surname`,
-    `date_of_birth`
+    *
 FROM
-    `students`
+    students
 WHERE
-    YEAR(`date_of_birth`) = 1990;
+    YEAR(date_of_birth) = 1990;
 
 -- 2. Selezionare tutti i corsi che valgono più di 10 crediti (479)
 
@@ -25,3 +23,12 @@ FROM
     students
 WHERE
     DATEDIFF(CURDATE(), date_of_birth) / 365 > 30;
+
+-- 4. Selezionare tutti i corsi del primo semestre del primo anno di un qualsiasi corso di laurea (286)
+
+SELECT
+    *
+FROM
+    courses
+WHERE
+    period = "I semestre" AND year = 1;
