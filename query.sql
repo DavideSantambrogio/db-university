@@ -55,4 +55,7 @@ WHERE LEVEL
 
 -- 7. Da quanti dipartimenti è composta l'università? (12)
 
-
+SELECT
+    MAX(id)
+FROM
+    departments;
